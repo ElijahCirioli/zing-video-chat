@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ZING</title>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="./icons/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon/favicon-16x16.png" />
+		<link rel="manifest" href="./icons/favicon/site.webmanifest" />
+		<link rel="mask-icon" href="./icons/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#180721" />
+		<meta name="theme-color" content="#ffffff" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Raleway&family=Roboto+Mono&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="./style.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="./mobile-style.css" rel="stylesheet" type="text/css" media="all" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+	</head>
+	<body>
+		<a href="https://elijahcirioli.com/"><img src="./logo.png" id="ec-logo" alt="Elijah Cirioli" /></a>
+		<div id="username-wrap">
+			<form id="username-form">
+				<input
+					id="username-input"
+					type="text"
+					autocomplete="off"
+					spellcheck="false"
+					placeholder="Username"
+					,
+					maxlength="30"
+				/>
+			</form>
+			<div id="username-icon"></div>
+		</div>
+		<div id="call-positioning">
+			<div id="setup-wrap">
+				<h1 class="logo-text">ZING</h1>
+				<form id="room-code-form">
+					<input
+						id="room-code-input"
+						type="text"
+						autocomplete="off"
+						spellcheck="false"
+						placeholder="Room code"
+						,
+						maxlength="10"
+					/>
+				</form>
+				<button id="join-room-button" class="setup-button">Join room</button>
+				<button id="create-room-button" class="setup-button">Create room</button>
+			</div>
+			<div id="call-wrap" hidden>
+				<div id="remote-wrap">
+					<video id="remote-video" autoplay playsinline hidden></video>
+					<div class="name-wrap" id="remote-name-wrap">
+						<p id="remote-name" hidden></p>
+						<div class="camera-off-image" id="remote-camera-off"></div>
+					</div>
+					<div id="remote-muted-image-wrap" hidden>
+						<div class="muted-image" id="remote-muted-image"></div>
+					</div>
+					<div id="remote-room-info-wrap" hidden>
+						<h1 class="logo-text" id="absolute-logo-text">ZING</h1>
+						<p id="room-info-label">Room code</p>
+						<h2 id="room-info-code"></h2>
+						<button id="copy-link-button">
+							Copy link
+							<div id="link-icon"></div>
+						</button>
+					</div>
+					<div id="ping-wrap" hidden>
+						<p id="ping-label">
+							Click to confirm that you are still there or you will be kicked for inactivity.
+						</p>
+						<button id="ping-button">I'm still here</button>
+					</div>
+				</div>
+				<div id="preview-wrap">
+					<video id="preview-video" autoplay muted playsinline hidden></video>
+					<div class="name-wrap" id="preview-name-wrap">
+						<p id="preview-name" hidden></p>
+						<div class="camera-off-image" id="preview-camera-off"></div>
+					</div>
+				</div>
+				<div id="call-controls">
+					<button class="control-button" id="end-call-button">
+						<div class="button-image" id="end-call-image"></div>
+					</button>
+					<button class="control-button toggled-off-button" id="camera-button">
+						<div class="button-image" id="camera-on-image"></div>
+						<div class="button-image camera-off-image"></div>
+					</button>
+					<button class="control-button toggled-off-button" id="microphone-button">
+						<div class="button-image muted-image"></div>
+						<div class="button-image" id="unmuted-image"></div>
+					</button>
+				</div>
+			</div>
+		</div>
+		<audio id="mute-audio" src="./sounds/mute.wav"></audio>
+		<audio id="unmute-audio" src="./sounds/unmute.wav"></audio>
+		<audio id="start-audio" src="./sounds/start.wav"></audio>
+		<audio id="end-audio" src="./sounds/end.wav"></audio>
+		<script src="index.js"></script>
+	</body>
+</html>

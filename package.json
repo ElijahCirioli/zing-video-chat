@@ -1,0 +1,17 @@
+{
+	"name": "zing",
+	"version": "1.0.0",
+	"description": "A webRTC video chatting application",
+	"main": "index.js",
+	"scripts": {
+		"test": "node index.js",
+		"start": "node index.js"
+	},
+	"author": "Elijah Cirioli",
+	"license": "MIT",
+	"dependencies": {
+		"express": "^4.17.3",
+		"http": "^0.0.1-security",
+		"socket.io": "^4.4.1"
+	}
+}

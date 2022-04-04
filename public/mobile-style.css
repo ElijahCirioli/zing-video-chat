@@ -1,0 +1,84 @@
+@media only screen and (max-width: 480px) {
+	#call-positioning {
+		margin: 80px auto 0 auto;
+		min-width: 0;
+		width: 90%;
+	}
+	#room-code-form {
+		margin: 10px 0 16px 0;
+		width: 80%;
+	}
+	#room-code-input {
+		height: 40px;
+		font-size: 18px;
+	}
+	.setup-button {
+		width: 80%;
+		height: 40px;
+		font-size: 18px;
+	}
+	.logo-text {
+		font-size: 60px;
+	}
+	#ec-logo {
+		width: 80px;
+	}
+	#call-wrap {
+		padding-top: 0;
+		height: max-content;
+		overflow-y: visible;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 15px;
+	}
+	#preview-wrap {
+		position: relative;
+		width: 100%;
+		padding-top: 75%;
+		border-radius: 16px;
+		height: 0;
+		bottom: 0;
+		right: 0;
+	}
+	#preview-video {
+		border-radius: 16px;
+	}
+	#remote-wrap {
+		position: relative;
+		height: 0;
+		padding-top: 75%;
+	}
+	#remote-video {
+		position: absolute;
+	}
+	#remote-room-info-wrap {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	#remote-name-wrap {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	#call-controls {
+		position: relative;
+		bottom: 0;
+		gap: 25px;
+		height: 45px;
+		margin-bottom: 10px;
+	}
+	.control-button {
+		height: 45px;
+		width: 45px;
+	}
+	#copy-link-button {
+		font-size: 18px;
+		padding: 8px 15px;
+	}
+}
