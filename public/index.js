@@ -195,7 +195,7 @@ async function handleTrack(e) {
 	} else if (e.track.kind === "audio") {
 		$("#remote-muted-image-wrap").hide();
 		if (remoteStream.getAudioTracks().length === 0) {
-			$("#unmute-audio")[0].play();
+			$("#unmute-audio")[0].play(); // play the sound effect
 		}
 	}
 
@@ -233,11 +233,11 @@ function updateRemoteTracks(updateData) {
 		// if audio has just been muted
 		if (remoteStream.getAudioTracks().length > 0) {
 			$("#mute-audio")[0].play(); // play mute sound effect
+			// remove audio tracks
+			remoteStream.getAudioTracks().forEach((track) => {
+				remoteStream.removeTrack(track);
+			});
 		}
-		// remove audio tracks
-		remoteStream.getAudioTracks().forEach((track) => {
-			remoteStream.removeTrack(track);
-		});
 		$("#remote-muted-image-wrap").show();
 	}
 
