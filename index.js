@@ -110,7 +110,7 @@ io.sockets.on("connection", (socket) => {
 	// socket connection closes
 	socket.conn.on("close", (reason) => {
 		if (socketRoom) {
-			// tel; other users to end
+			// tell other users to end
 			socket.to(socketRoom).emit("end");
 			console.log("connection closed: " + socketRoom);
 		}
