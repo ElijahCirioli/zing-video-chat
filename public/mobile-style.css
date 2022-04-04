@@ -81,4 +81,8 @@
 		font-size: 18px;
 		padding: 8px 15px;
 	}
+	#ping-wrap {
+		width: 70%;
+		left: calc(15% - 15px);
+	}
 }
