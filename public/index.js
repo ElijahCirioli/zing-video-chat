@@ -82,6 +82,9 @@ socket.on("ready", () => {
 // triggers when the other user sends a message
 socket.on("message", (message) => {
 	console.log("client received message:", message);
+	if (!message) {
+		return;
+	}
 
 	if (message.type === "offer") {
 		// received an offer
@@ -175,7 +178,11 @@ async function handleIceCandidate(e) {
 async function handleNegotiation() {
 	connection
 		.createOffer()
-		.then(setLocalAndSendMessage)
+		.then((sessionDescription) => {
+			if (connection.signalingState === "stable") {
+				setLocalAndSendMessage(sessionDescription);
+			}
+		})
 		.catch((e) => {
 			console.log("create offer error:", e);
 		});
