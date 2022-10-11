@@ -5,4 +5,4 @@ Try it out at https://zingvideochat.onrender.com/ or https://elijahcirioli.com/z
 
 Read about it at https://elijahcirioli.com/zing/about.html
 
-If you want to run this as localhost you should modify the client websocket to not specify Heroku as its target. (public/index.js line 2)
+If you want to run this as localhost you should modify the client websocket to not specify Render as its target. (public/index.js line 2)
